@@ -1,10 +1,17 @@
 //: net/mindview/util/Sets.java
 package com.lbx.MathUtils;
 
+import org.junit.Test;
+
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Sets {
+import static javafx.scene.input.KeyCode.T;
+
+public class Sets<T> {
     /**
      * 求并集
      *
@@ -53,6 +60,7 @@ public class Sets {
 
     /**
      * 求交集之外的东西
+     *
      * @param a
      * @param b
      * @param <T>
@@ -61,4 +69,7 @@ public class Sets {
     public static <T> Set<T> complement(Set<T> a, Set<T> b) {
         return difference(union(a, b), intersection(a, b));
     }
+
+
+
 } ///:~
