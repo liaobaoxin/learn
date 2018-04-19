@@ -1,4 +1,4 @@
-package com.lbx.properties;
+package com.lbx.InputOutputStream;
 
 import org.junit.Test;
 
