@@ -37,4 +37,7 @@ public class BinaryTreeNode {
         this.left = left;
         this.right = right;
     }
+
+    public BinaryTreeNode() {
+    }
 }
