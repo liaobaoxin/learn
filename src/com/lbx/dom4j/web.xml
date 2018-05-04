@@ -6,12 +6,21 @@
 
 
     <servlet>
-        <servlet-name>hello</servlet-name>
+        <servlet-name>hello1</servlet-name>
         <servlet-class>com.lbx.dom4j.Dom4jTest</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>hello</servlet-name>
-        <url-pattern>/helloServlet</url-pattern>
+        <servlet-name>hello1</servlet-name>
+        <url-pattern>/helloServlet1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>hello2</servlet-name>
+        <servlet-class>com.lbx.classAdapter.Adapter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hello2</servlet-name>
+        <url-pattern>/helloServlet2</url-pattern>
     </servlet-mapping>
 </web-app>
         
