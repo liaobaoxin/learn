@@ -8,7 +8,7 @@ import org.junit.Test;
 public class CacheTest {
     @Test
     public void fun1() {
-        LRUCache<String,String> cache=new LRUCache<>(4);
+        LRUCache<String,String> cache=new LRUCache<String,String>(4);
 
 
         System.out.println(cache);
