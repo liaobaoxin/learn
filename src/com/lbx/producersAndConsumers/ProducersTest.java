@@ -7,15 +7,15 @@ import java.util.concurrent.*;
  **/
 public class ProducersTest {
     public static void main(String[] args) throws InterruptedException {
-        ScheduledThreadPoolExecutor executor=new ScheduledThreadPoolExecutor(1);
+        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
         executor.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
-                LinkedBlockingDeque<BusinessVO> messageQueue = BlockingContainer.getInstance();
+                LinkedBlockingDeque<BusinessVO> messageQueue = BlockingContainer.businessVOS;
                 System.out.println("开始添加");
-                messageQueue.push(new BusinessVO("小明",10));
+                messageQueue.push(new BusinessVO("小明", 10));
             }
-        },0,1, TimeUnit.SECONDS);
+        }, 0, 1, TimeUnit.SECONDS);
 
         TimeUnit.SECONDS.sleep(5);
 
@@ -23,12 +23,12 @@ public class ProducersTest {
         threadPool.submit(new Runnable() {
             @Override
             public void run() {
-                LinkedBlockingDeque<BusinessVO> messageQueue = BlockingContainer.getInstance();
                 try {
                     while (true) {
+                        LinkedBlockingDeque<BusinessVO> messageQueue = BlockingContainer.businessVOS;
                         System.out.println(messageQueue.size());
-//                        BusinessVO businessVO = messageQueue.take();
-//                        System.out.println(businessVO.toString());
+                        BusinessVO businessVO = messageQueue.take();
+                        System.out.println(businessVO.toString());
                     }
 
                 } catch (Exception e) {
@@ -38,7 +38,6 @@ public class ProducersTest {
         });
 
     }
-
 
 
 }

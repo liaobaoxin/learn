@@ -13,7 +13,7 @@ public class ComsumeTest {
         threadPool.submit(new Runnable() {
             @Override
             public void run() {
-                LinkedBlockingDeque<BusinessVO> messageQueue = BlockingContainer.getInstance();
+             /*   LinkedBlockingDeque<BusinessVO> messageQueue = BlockingContainer.businessVOS();
                 try {
                     while (true) {
                         System.out.println(messageQueue.size());
@@ -23,7 +23,7 @@ public class ComsumeTest {
 
                 } catch (Exception e) {
                     e.printStackTrace();
-                }
+                }*/
             }
         });
     }

@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 public class BlockingContainer {
     private volatile static BlockingContainer instance;
 
-    static LinkedBlockingDeque<BusinessVO> businessVOS = new LinkedBlockingDeque<>();
+    public static LinkedBlockingDeque<BusinessVO> businessVOS = new LinkedBlockingDeque<>();
 
     public static BlockingContainer getInstance() {
         if (instance == null) {
