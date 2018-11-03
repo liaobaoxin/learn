@@ -1,4 +1,4 @@
-package com.lbx.aopLearn;
+package com.lbx.aopLearn.primordialAOP;
 
 /**
  * Create by lbx on 2018/11/3  14:48
