@@ -14,22 +14,22 @@ public class Input implements Runnable {
 
     @Override
     public void run() {
-        int i=0;
+        int i = 0;
         while (true) {
             synchronized (resource) {
-                if(resource.flag){
+                if (resource.flag) {
                     try {
                         resource.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                if(i%2==0){
-                    resource.name="张三";
-                    resource.sex="男";
-                }else {
-                    resource.name="lisi";
-                    resource.sex="nv";
+                if (i % 2 == 0) {
+                    resource.name = "张三";
+                    resource.sex = "男";
+                } else {
+                    resource.name = "lisi";
+                    resource.sex = "nv";
                 }
 
                 i++;
@@ -40,5 +40,11 @@ public class Input implements Runnable {
             }
 
         }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        Thread.currentThread().interrupted();
+        System.out.println("11");
+
     }
 }
